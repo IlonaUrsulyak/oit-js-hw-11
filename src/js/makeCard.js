@@ -1,25 +1,23 @@
+const gallery = document.querySelector('.gallery');
 
-export function makeCardImage(data) {
-    return data.map(image => 
-      `<div class="gallery__photo-card">
-        <a class="gallery__link" href=${image.largeImageURL}>
-          <img class="photo-card__image" src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
-          <div class="info">
-              <p class="info-item">
-                <b>Likes:</b> ${image.likes}
-              </p>
-              <p class="info-item">
-                <b>Views:</b> ${image.views}
-              </p>
-              <p class="info-item">
-                <b>Comments:</b> ${image.comments}
-              </p>
-              <p class="info-item">
-                <b>Downloads:</b> ${image.downloads}
-              </p>
-          </div>
-        </a>
-      </div> `
-    ).join('');
+function makeCardImage (images) {
+    return images.map (image => {
+        const { id, largeImageURL, webformatURL, tags, likes, views, comments, downloads } = image;
+      return `
+        <div class = "photo-card">
+            <a class="gallery__link" href="${largeImageURL}">
+                <div class="gallery-item" id="${id}">
+                    <img class="gallery-item__img" src="${webformatURL}" alt="${tags}" loading="lazy" />
+                    <div class="info">
+                    <p class="info-item"><b>Likes</b>${likes}</p>
+                    <p class="info-item"><b>Views</b>${views}</p>
+                    <p class="info-item"><b>Comments</b>${comments}</p>
+                    <p class="info-item"><b>Downloads</b>${downloads}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `;
+    }).join('');
 }
 
