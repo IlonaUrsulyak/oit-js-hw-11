@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+height: 25px;
+border: 0px;
+padding-left: 5px;
+border-radius: 10px;
+margin-right: 5px;
+}
+
+button{
+    height: 25px;
+    border: 1px;
+    border-radius: 10px;
+    width: 50px;
+    background-color: grey;
+    color: white;
+
+}
+
+
+:root {
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
+}
+
+.box-form {
+    display: block;
+    background-color: skyblue;
+    width: 100%;
+    }
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(48, 48, 230);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    max-width: 1140px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+    grid-gap: 12px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.gallery__link {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+}
+
+.gallery__link:hover {
+    cursor: zoom-in;
+}
+
+.gallery__photo-card {
+    position: relative;
+    margin-bottom: 60px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.info {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    margin: auto;
+
+}
+
+
+.gallery__photo-card:hover {
+    transform: scale(1.03);
+}
+
+.photo-card__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.is-hidden {
+    display: none;
+}
+
+.button_load{
+    display: block;
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+}
